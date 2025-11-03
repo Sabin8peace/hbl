@@ -1,0 +1,26 @@
+{
+  "name": "bickyraj/hbl",
+  "description": "himalyan bank payment library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Bickyraj\\Hbl\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "bicky",
+      "email": "bickyrajkayastha@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "web-token/jwt-framework": "^3.4",
+    "guzzlehttp/guzzle": "^7.0",
+    "nesbot/carbon": "^2.56",
+    "ext-openssl": "*"
+  },
+  "config": {
+    "platform-check": false
+  }
+}
