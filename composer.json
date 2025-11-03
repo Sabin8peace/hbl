@@ -7,6 +7,16 @@
       "Bickyraj\\Hbl\\": "src/"
     }
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Bickyraj\\Hbl\\HblServiceProvider"
+      ]
+    },
+    "files": [
+      "config/hbl.php"
+    ]
+  },
   "authors": [
     {
       "name": "sabin",
