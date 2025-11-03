@@ -8,25 +8,26 @@ class HblServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/config/config.php','hbl'
-        );
+        // Merge package config with app config
+        $this->mergeConfigFrom(__DIR__ . '/../config/hbl.php', 'hbl');
+
+        // Bind HblClient for dependency injection
+        $this->app->singleton(HblClient::class, function ($app) {
+            return new HblClient(config('hbl'));
+        });
     }
 
     /**
      * Bootstrap services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
+        // Publish config file
         $this->publishes([
-          __DIR__.'/config/config.php' => config_path('hbl.php'),
+            __DIR__ . '/../config/hbl.php' => config_path('hbl.php'),
         ], 'config');
     }
 }
